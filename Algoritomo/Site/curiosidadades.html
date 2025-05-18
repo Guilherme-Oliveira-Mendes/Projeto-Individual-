@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURIOSIDADES</title>
+    <link rel="shortcut icon" href="Imagens/Logo/logo.webp" type="image/x-icon">
+<link rel="stylesheet" href="Css/index.css" />
+</head>
+<body>
+    <header class="navbar">
+    <nav>
+      <a href="index.html">HOME</a>
+       <a href="curiosidadades.html">CURIOSIDADES</a>
+      <a href="cadastro.html">CADASTRO</a>
+       <a href="login.html">LOGIN</a>
+    </nav>
+  </header>
+  <div style="display: flex; flex-direction: row; justify-content: center; ">
+ <div id="div_filmes">
+    <button  style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;" onclick="Filmes()">FILMES</button>
+  </div>
+ <div id="div_forca">
+      <button style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;"  onclick="Forca()">FORÇA</button>
+   
+     </div>
+     <div id="div_armas">
+        <button style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;"  onclick="Armas()">ARMAS</button>
+       
+        </div>
+ <div id="div_vs">
+          <button style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;"  onclick="Vs()"> ALIANÇA REBELDE X IMPÉRIO</button>
+     
+         </div>
+         <div id="div_mensagem"></div>
+         </div>
+</body>
+</html>
+<script>
+function Filmes(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+
+div_filmes.innerHTML = `<button onclick="I()">Triologia I</button><br>
+                        <button onclick="II()">Triologia II</button><br>
+                        <button onclick="III()">Triologia III</button><br>
+                        `
+
+}
+function I(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "filme 1 "
+}
+
+function II(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Filme 2 "
+}
+
+function III(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Filme 3 "
+}
+
+function Forca(){
+div_filmes.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+
+
+div_forca.innerHTML = `<button  onclick="Yoda()" >Segundo Mestre Yoda</button><br>
+                        <button  onclick="Qui_Gon()">Segundo Mestre Qui-Gon Jinn</button><br>`
+}
+
+
+function Yoda(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Yoda"
+}
+
+function Qui_Gon(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Qui-Gon"
+}
+
+
+function Armas(){
+    div_filmes.innerHTML = ``
+div_forca.innerHTML = ``
+div_vs.innerHTML = ``
+
+     div_armas.innerHTML = `<button onclick="Blater()">Blaters</button><br>
+                        <button onclick="Cristais()">Cristais Kybers</button><br>`
+}
+
+function Blater(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Blater"
+}
+
+
+function Cristais(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Cristais"
+}
+
+    function Vs(){
+            div_filmes.innerHTML = ``
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+        div_vs.innerHTML = `<button onclick="Rebelde()">Aliança Rebelde</button><br>
+                        <button onclick="Império()">Império</button><br>`
+    }
+    function Rebelde(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Rebelde"
+}
+
+function Império(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = "Império"
+}
+
+</script>
+
