@@ -31,15 +31,4 @@ html {
   font-weight: bold;
 }
 
-footer.text-center {
-    background-color: #000000;
-    color: rgb(255, 242, 0);
-    font-family: Arial, sans-serif;
-    padding: 20px 0;
-}
 
-.text-center.p-3 {
-    background-color: transparent;
-    font-size: 12px;
-    text-align: center;
-}
