@@ -7,7 +7,15 @@
     <link rel="shortcut icon" href="Imagens/Logo/logo.webp" type="image/x-icon">
 <link rel="stylesheet" href="Css/index.css" />
 </head>
-<body>
+<body style=" background-image:url(Imagens/fundo_curiojpg.webp) ;
+background-repeat: no-repeat;
+background-size: cover;
+">
+  <style>
+
+
+
+</style>
 <nav style="display: flex; justify-content: space-between; align-items: center; background-color: black; border: 1px solid yellow; padding: 10px 20px;">
 
   <img src="Imagens/Logo/logo.webp" style="height: 60px;">
@@ -22,36 +30,35 @@
   </div>
 </nav>
   </header>
-  <div style="display: flex; flex-direction: row; justify-content: center; ">
- <div id="div_filmes">
-    <button  style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;" onclick="Filmes()">FILMES</button>
+  <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+  <div id="div_filmes" style="color: yellow;">
+    <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;"  onclick="Filmes()">FILMES</button>
   </div>
- <div id="div_forca">
-      <button style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;"  onclick="Forca()">FORÇA</button>
-   
-     </div>
-     <div id="div_armas">
-        <button style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;"  onclick="Armas()">ARMAS</button>
-       
-        </div>
- <div id="div_vs">
-          <button style="background-color: yellow;color: black;border-radius: 20%; width: 250px;height: 35px;"  onclick="Vs()"> ALIANÇA REBELDE X IMPÉRIO</button>
-     
-         </div>
-         <div id="div_mensagem"></div>
-         </div>
+  <div id="div_forca" style="color: yellow;">
+    <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Forca()">FORÇA</button>
+  </div>
+  <div id="div_armas" style="color: yellow;">
+    <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Armas()">ARMAS</button>
+  </div>
+  <div id="div_vs" style="color: yellow;" >
+    <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Vs()">ALIANÇA REBELDE X IMPÉRIO</button>
+  </div>
+</div>
+<div id="div_mensagem" style="color: yellow;"></div>
+
          
 </body>
 </html>
 <script>
+  
 function Filmes(){
 div_forca.innerHTML = ``
 div_armas.innerHTML = ``
 div_vs.innerHTML = ``
 
-div_filmes.innerHTML = `<button onclick="I()">Triologia I</button><br>
-                        <button onclick="II()">Triologia II</button><br>
-                        <button onclick="III()">Triologia III</button><br>
+div_filmes.innerHTML = `<button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="I()">Triologia I</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="II()">Triologia II</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="III()">Triologia III</button><br>
                         `
 
 }
@@ -88,8 +95,8 @@ div_armas.innerHTML = ``
 div_vs.innerHTML = ``
 
 
-div_forca.innerHTML = `<button  onclick="Yoda()" >Segundo Mestre Yoda</button><br>
-                        <button  onclick="Qui_Gon()">Segundo Mestre Qui-Gon Jinn</button><br>`
+div_forca.innerHTML = `<button  style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Yoda()" >Segundo Mestre Yoda</button><br>
+                        <button  style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Qui_Gon()">Segundo Mestre Qui-Gon Jinn</button><br>`
 }
 
 
@@ -117,8 +124,8 @@ function Armas(){
 div_forca.innerHTML = ``
 div_vs.innerHTML = ``
 
-     div_armas.innerHTML = `<button onclick="Blater()">Blaters</button><br>
-                        <button onclick="Cristais()">Cristais Kybers</button><br>`
+     div_armas.innerHTML = `<button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Blater()">Blaters</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Cristais()">Cristais Kybers</button><br>`
 }
 
 function Blater(){
@@ -144,8 +151,8 @@ div_filmes.innerHTML = ``
             div_filmes.innerHTML = ``
 div_forca.innerHTML = ``
 div_armas.innerHTML = ``
-        div_vs.innerHTML = `<button onclick="Rebelde()">Aliança Rebelde</button><br>
-                        <button onclick="Império()">Império</button><br>`
+        div_vs.innerHTML = `<button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Rebelde()">Aliança Rebelde</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Império()">Império</button><br>`
     }
     function Rebelde(){
 div_forca.innerHTML = ``
