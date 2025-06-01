@@ -63,7 +63,7 @@
 </body>
 </html>
     <script>
-        const perguntas = [
+        var perguntas = [
             {
                 texto: "1. Quando alguém te trai, o que você sente primeiro?",
                 opcoes: [
@@ -136,31 +136,31 @@
             }
         ];
 
-        let indiceAtual = 0;
-        let respostasUsuario = [];
+        var i = 0;
+        var respostas = [];
 
         function mostrarPergunta() {
-            const perguntaAtual = perguntas[indiceAtual];
-            document.getElementById("pergunta").innerText = perguntaAtual.texto;
+            var pergunta = perguntas[i];
+            document.getElementById("pergunta").innerText = pergunta.texto;
 
-            const select = document.getElementById("resposta");
+            var select = document.getElementById("resposta");
             select.innerHTML = '<option value="">Escolha uma resposta</option>';
-            perguntaAtual.opcoes.forEach(opcao => {
-                const opt = document.createElement("option");
-                opt.value = opcao.valor;
-                opt.innerText = opcao.texto;
-                select.appendChild(opt);
+            pergunta.opcoes.forEach(opcao => {
+                var opcoes = document.createElement("option");
+                opcoes.value = opcao.valor;
+                opcoes.innerText = opcao.texto;
+                select.appendChild(opcoes);
             });
         }
 
         function proximaPergunta() {
-            const respostaSelecionada = document.getElementById("resposta").value;
+            var respostaSelecionada = document.getElementById("resposta").value;
             
 
-            respostasUsuario.push(respostaSelecionada);
-            indiceAtual++;
+            respostas.push(respostaSelecionada);
+            i++;
 
-            if (indiceAtual < perguntas.length) {
+            if (i < perguntas.length) {
                 mostrarPergunta();
             } else {
                 mostrarResultado();
@@ -168,10 +168,10 @@
         }
 
         function mostrarResultado() {
-            let luz = respostasUsuario.filter(r => r === "a").length;
-            let sombra = respostasUsuario.filter(r => r === "b").length;
+            var luz = respostas.filter(r => r === "a").length;
+            var sombra = respostas.filter(r => r === "b").length;
 
-            let resultado = "";
+            var resultado = "";
 
             if (luz > sombra) {
                 resultado = "Você está no Lado da Luz. Que a Força esteja com você, Jedi!";
@@ -187,7 +187,7 @@
             `;
         }
 
-        // Inicializa
+        
         mostrarPergunta();
     </script>
 
