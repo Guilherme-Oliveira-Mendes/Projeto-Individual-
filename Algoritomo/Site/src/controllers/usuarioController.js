@@ -1,8 +1,9 @@
 var usuarioModel = require("../models/usuarioModel");
 
 function autenticar(req, res) {
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var email = req.body.email;
+var senha = req.body.senha;
+
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -44,9 +45,9 @@ function autenticar(req, res) {
 }
 
 function cadastrar(req, res) {
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
+    var nome = req.body.nome;
+    var email = req.body.email;
+    var senha = req.body.senha;
 
 
        console.log("REQUISIÇÃO DE CADASTRO CHEGOU!");

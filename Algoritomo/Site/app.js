@@ -11,17 +11,17 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
-// ✅ MIDDLEWARES DEVE VIR PRIMEIRO
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
-// ✅ DEPOIS AS ROTAS
 var usuarioRouter = require('./src/routes/usuarios');
 app.use('/usuarios', usuarioRouter);
+var respostasRouter = require("./src/routes/respostas");
+app.use("/respostas", respostasRouter);
 
-// ✅ INICIALIZAÇÃO DO SERVIDOR
 app.listen(PORTA_APP, function () {
     console.log(`
     ##   ##  ######   #####             ####       ##               ##  ##    ####    ######  

@@ -15,10 +15,11 @@
 
   <img src="Imagens/Logo/logo.webp" style="height: 60px;">
   <div style="display: flex; gap: 40px;">
+    <a href="index.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">HOME</a>
     <a href="curiosidadades.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">SAIBA MAIS</a>
     <a href="cadastro.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">CADASTRO</a>
     <a href="login.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">LOGIN</a>
-        <a href="dashboard.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">DASHBOARD</a>
+    <a href="quiz.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">QUIZ</a>
 
   </div>
 </nav>
@@ -28,11 +29,11 @@
 
 <div style="display: flex; flex: 1;">
 
-  <aside style="width: 150px; background-color: black; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
-    <div style="margin-bottom: 20px; font-weight: bold;">OLÁ <br>Mestre USUÁRIO</div>
-    <div style="margin-bottom: 20px;"><a style="color: yellow;text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;"href="quiz.html">QUIZ</a></div>
-    <div style="margin-top: auto;"><a style="color: yellow;text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;"  href="index.html">SAIR</a></div>
-  </aside>
+  <div style="width: 150px; background-color: black; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+   <div style="margin-bottom: 20px; font-weight: bold;" id="boasVindas">OLÁ <br><b>Mestre USUÁRIO</b></div>
+
+    
+  </div>
 
   <main style="flex: 1; padding: 20px;">
 
@@ -75,14 +76,19 @@
 </body>
 </html>
 <script>
+
+  // Declarar as variáveis globais dos gráficos para atualizar depois
   const barCtx = document.getElementById('barChart').getContext('2d');
-  new Chart(barCtx, {
+  const donutCtx = document.getElementById('donutChart').getContext('2d');
+
+  // Criar os gráficos com dados iniciais zerados
+  const barChart = new Chart(barCtx, {
     type: 'bar',
     data: {
       labels: ['JEDI', 'JEDI CINZA', 'SITH'],
       datasets: [{
         label: '',
-        data: [8, 6, 10],
+        data: [0, 0, 0],
         backgroundColor: ['#00cc66', '#666666', '#cc0000'],
       }]
     },
@@ -106,13 +112,12 @@
     }
   });
 
-  const donutCtx = document.getElementById('donutChart').getContext('2d');
-  new Chart(donutCtx, {
+  const donutChart = new Chart(donutCtx, {
     type: 'doughnut',
     data: {
       labels: ['Jedi', 'Jedi Cinza', 'Sith'],
       datasets: [{
-        data: [8, 6, 10],
+        data: [0, 0, 0],
         backgroundColor: ['#00cc66', '#666666', '#cc0000'],
         borderColor: 'black',
         borderWidth: 1
@@ -134,5 +139,57 @@
       }
     }
   });
+
+  // Função para atualizar a dashboard com dados da API
+  async function atualizarDashboard() {
+    try {
+      const response = await fetch('/respostas/estatisticas');
+      if (!response.ok) throw new Error('Erro ao obter dados da API');
+
+      const dados = await response.json();
+
+      const total = dados.totalRespostas || 0;
+      const jedi = dados.totalJedi || 0;
+      const jediCinza = dados.totalJediCinza || 0;
+      const sith = dados.totalSith || 0;
+
+      // Atualizar os textos na dashboard (nas 4 divs de estatísticas)
+      // Elas estão na mesma ordem no HTML, no primeiro container de divs com fundo gold
+
+      const divsStats = document.querySelectorAll("div[style*='background-color: gold']");
+      if (divsStats.length >= 4) {
+        divsStats[0].innerHTML = `TOTAL DE RESPOSTAS:<br>${total}`;
+        divsStats[1].innerHTML = `JEDI:<br>${jedi} <br>(${total ? ((jedi / total) * 100).toFixed(0) : 0}%)`;
+        divsStats[2].innerHTML = `JEDI CINZA:<br>${jediCinza} <br>(${total ? ((jediCinza / total) * 100).toFixed(0) : 0}%)`;
+        divsStats[3].innerHTML = `SITH:<br>${sith} <br>(${total ? ((sith / total) * 100).toFixed(0) : 0}%)`;
+      }
+
+      // Atualizar os dados dos gráficos e redesenhar
+      barChart.data.datasets[0].data = [jedi, jediCinza, sith];
+      barChart.update();
+
+      donutChart.data.datasets[0].data = [jedi, jediCinza, sith];
+      donutChart.update();
+
+    } catch (error) {
+      console.error('Erro ao atualizar dashboard:', error);
+    }
+  }
+
+  // Atualizar nome do usuário na dashboard
+  var nomeUsuario = sessionStorage.NOME_USUARIO;
+  if (!nomeUsuario) {
+    alert("Você precisa estar logado para acessar a dashboard.");
+    window.location.href = "login.html";
+  } else {
+    var divBoasVindas = document.getElementById("boasVindas");
+    divBoasVindas.innerHTML = `OLÁ <br>Mestre ${nomeUsuario.toUpperCase()}`;
+  }
+
+  // Chamar a atualização da dashboard ao carregar a página
+  atualizarDashboard();
+
 </script>
+
+
 

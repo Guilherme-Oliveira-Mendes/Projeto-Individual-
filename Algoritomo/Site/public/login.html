@@ -18,7 +18,6 @@ background-size: cover;
      <a href="index.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">HOME</a>
   <a href="curiosidadades.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">SAIBA MAIS</a>
     <a href="cadastro.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">CADASTRO</a>
-        <a href="dashboard.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: News Gothic, ITC Serif Gothic;">DASHBOARD</a>
  
   </div>
 </nav>
@@ -46,7 +45,7 @@ background-size: cover;
        
         </p><br><br><br><br>
 
-        <button  style="padding: 12px; background-color: black; color: white; border-radius: 40px; border: 2px solid yellow; font-size: 16px; cursor: pointer;">Entrar</button>
+        <button  type="button" onclick="entrar()" style="padding: 12px; background-color: black; color: white; border-radius: 40px; border: 2px solid yellow; font-size: 16px; cursor: pointer;">Entrar</button>
 
  
       </form>
@@ -98,6 +97,7 @@ background-size: cover;
         }
         
 
+
         console.log("FORM LOGIN: ", email);
         console.log("FORM SENHA: ", senha);
 
@@ -107,8 +107,8 @@ background-size: cover;
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: email,
-                senhaServer: senha
+                email: email,
+                senha: senha
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")

@@ -27,10 +27,4 @@ CREATE TABLE UsuarioQuiz (
 
 select * from Usuario;
 
-SELECT 
-    SUM(qtdSith) AS totalSith,
-    SUM(qtdJedi) AS totalJedi,
-    SUM(qtdJediCinza) AS totalJediCinza,
-    SUM(qtdSith + qtdJedi + qtdJediCinza) AS totalRespostas
-FROM UsuarioQuiz;
 
