@@ -1,0 +1,8 @@
+mysql -u aluno -p 
+senha:Sptech#2024
+
+use Diario_da_galaxia;
+
+show tables;
+
+select * from Usuário;
