@@ -25,7 +25,14 @@ CREATE TABLE UsuarioQuiz (
 );
 
 
+
+SHOW TABLES;
+
+INSERT INTO Quiz (descricao) VALUES ('Quiz - De que lado da Força você está?');
+
 select * from Usuario;
+select * from Quiz;
+select * from UsuarioQuiz;
 
 SELECT 
     SUM(qtdSith) AS totalSith,

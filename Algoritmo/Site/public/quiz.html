@@ -169,27 +169,66 @@
             }
         }
 
-        function mostrarResultado() {
-            var luz = respostas.filter(r => r === "a").length;
-            var sombra = respostas.filter(r => r === "b").length;
+    function mostrarResultado() {
+    var qtdJedi = respostas.filter(r => r === "a").length;
+    var qtdSith = respostas.filter(r => r === "b").length;
+    var qtdJediCinza = respostas.length === 10 && qtdJedi === qtdSith ? 10 : 0;
 
-            var resultado = "";
+    var resultado = "";
 
-            if (luz > sombra) {
-                resultado = "Você está no Lado da Luz. Que a Força esteja com você, Jedi!";
-            } else if (sombra > luz) {
-                resultado = "Você pertence ao Lado Sombrio da Força. Poder e paixão são o seu caminho!";
-            } else {
-                resultado = "Você está no caminho do Equilíbrio, como um Jedi Cinza.";
-            }
+    if (qtdJedi > qtdSith) {
+        resultado = "Você está no Lado da Luz. Que a Força esteja com você, Jedi!";
+    } else if (qtdSith > qtdJedi) {
+        resultado = "Você pertence ao Lado Sombrio da Força. Poder e paixão são o seu caminho!";
+    } else {
+        resultado = "Você está no caminho do Equilíbrio, como um Jedi Cinza.";
+    }
 
-            document.getElementById("quiz").innerHTML = `
-                <h2 style="text-align: center;">Resultado:</h2>
-                <p style="text-align: center;">${resultado}</p>
-            `;
-        }
+    document.getElementById("quiz").innerHTML = `
+        <h2 style="text-align: center;">Resultado:</h2>
+        <p style="text-align: center;">${resultado}</p>
+    `;
 
-        
-        mostrarPergunta();
+    
+    enviarRespostasQuiz(qtdJedi, qtdJediCinza, qtdSith);
+}
+       function enviarRespostasQuiz(qtdJedi, qtdJediCinza, qtdSith) {
+    var idUsuario = parseInt(sessionStorage.ID_USUARIO);
+    var idQuiz = 1;
+
+    
+
+    fetch("/respostas/salvar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idUsuario: idUsuario,
+        idQuiz: idQuiz,
+        qtdJedi: qtdJedi,
+        qtdJediCinza: qtdJediCinza,
+        qtdSith: qtdSith
+      })
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log("Respostas enviadas com sucesso.");
+        alert("Quiz enviado! Redirecionando para a dashboard...");
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+      } else {
+        console.error("Erro ao enviar respostas.");
+        response.text().then(texto => {
+          console.error(texto);
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Erro na requisição:", error);
+    });
+  }
+  mostrarPergunta()
     </script>
 

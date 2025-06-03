@@ -12,6 +12,20 @@ async function obterEstatisticas() {
     return results[0];
 }
 
+async function salvarRespostas(idUsuario, idQuiz, qtdJedi, qtdJediCinza, qtdSith) {
+    const [resultado] = await conexao.query(`
+        INSERT INTO UsuarioQuiz (idUsuario, idQuiz, qtdJedi, qtdJediCinza, qtdSith)
+        VALUES (?, ?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+            qtdJedi = VALUES(qtdJedi),
+            qtdJediCinza = VALUES(qtdJediCinza),
+            qtdSith = VALUES(qtdSith)
+    `, [idUsuario, idQuiz, qtdJedi, qtdJediCinza, qtdSith]);
+
+    return resultado;
+}
+
 module.exports = {
-    obterEstatisticas
+    obterEstatisticas,
+    salvarRespostas
 };

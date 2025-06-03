@@ -27,7 +27,7 @@
 </header>
 
 
-<div style="display: flex; flex: 1;">
+<div style="display: flex; flex-direction: column; justify-content: center;align-items: center;">
 
   <h1>
    <div style="margin-bottom: 20px; font-weight: bold;" id="boasVindas">OLÁ <br><b>Mestre USUÁRIO</b></div>
@@ -61,7 +61,7 @@
       <div style="padding: 15px 30px; border-radius: 30px; font-weight: bold; font-size: 18px; background-color: #666666; color: white;">JEDI CINZA</div>
       <div style="padding: 15px 30px; border-radius: 30px; font-weight: bold; font-size: 18px; background-color: #cc0000; color: white;">SITH</div>
     </div>
-  </main>
+ 
 </div>
 
 
@@ -77,11 +77,11 @@
 </html>
 <script>
 
-  // Declarar as variáveis globais dos gráficos para atualizar depois
+ 
   const barCtx = document.getElementById('barChart').getContext('2d');
   const donutCtx = document.getElementById('donutChart').getContext('2d');
 
-  // Criar os gráficos com dados iniciais zerados
+ 
   const barChart = new Chart(barCtx, {
     type: 'bar',
     data: {
@@ -140,7 +140,7 @@
     }
   });
 
-  // Função para atualizar a dashboard com dados da API
+  
   async function atualizarDashboard() {
     try {
       const response = await fetch('/respostas/estatisticas');
@@ -153,9 +153,7 @@
       const jediCinza = dados.totalJediCinza || 0;
       const sith = dados.totalSith || 0;
 
-      // Atualizar os textos na dashboard (nas 4 divs de estatísticas)
-      // Elas estão na mesma ordem no HTML, no primeiro container de divs com fundo gold
-
+     
       const divsStats = document.querySelectorAll("div[style*='background-color: gold']");
       if (divsStats.length >= 4) {
         divsStats[0].innerHTML = `TOTAL DE RESPOSTAS:<br>${total}`;
@@ -164,7 +162,7 @@
         divsStats[3].innerHTML = `SITH:<br>${sith} <br>(${total ? ((sith / total) * 100).toFixed(0) : 0}%)`;
       }
 
-      // Atualizar os dados dos gráficos e redesenhar
+   
       barChart.data.datasets[0].data = [jedi, jediCinza, sith];
       barChart.update();
 
@@ -176,7 +174,6 @@
     }
   }
 
-  // Atualizar nome do usuário na dashboard
   var nomeUsuario = sessionStorage.NOME_USUARIO;
   if (!nomeUsuario) {
     alert("Você precisa estar logado para acessar a dashboard.");
@@ -186,7 +183,7 @@
     divBoasVindas.innerHTML = `OLÁ <br>Mestre ${nomeUsuario.toUpperCase()}`;
   }
 
-  // Chamar a atualização da dashboard ao carregar a página
+ 
   atualizarDashboard();
 
 </script>

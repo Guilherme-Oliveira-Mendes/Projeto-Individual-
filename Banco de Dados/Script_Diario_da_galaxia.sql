@@ -24,7 +24,12 @@ CREATE TABLE UsuarioQuiz (
     FOREIGN KEY (idQuiz) REFERENCES Quiz(idQuiz)
 );
 
+SHOW TABLES;
+
+INSERT INTO Quiz (descricao) VALUES ('Quiz - De que lado da Força você está?');
 
 select * from Usuario;
+select * from Quiz;
+select * from UsuarioQuiz;
 
 
