@@ -30,7 +30,7 @@
 <div style="display: flex; flex-direction: column; justify-content: center;align-items: center;">
 
   <h1>
-   <div style="margin-bottom: 20px; font-weight: bold;" id="boasVindas">OLÁ <br><b>Mestre USUÁRIO</b></div>
+   <div style="margin-bottom: 20px; font-weight: bold;" id="boasVindas">OLÁ Mestre USUÁRIO </div>
 </h1>
     
   
@@ -156,10 +156,10 @@
      
       const divsStats = document.querySelectorAll("div[style*='background-color: gold']");
       if (divsStats.length >= 4) {
-        divsStats[0].innerHTML = `TOTAL DE RESPOSTAS:<br>${total}`;
-        divsStats[1].innerHTML = `JEDI:<br>${jedi} <br>(${total ? ((jedi / total) * 100).toFixed(0) : 0}%)`;
-        divsStats[2].innerHTML = `JEDI CINZA:<br>${jediCinza} <br>(${total ? ((jediCinza / total) * 100).toFixed(0) : 0}%)`;
-        divsStats[3].innerHTML = `SITH:<br>${sith} <br>(${total ? ((sith / total) * 100).toFixed(0) : 0}%)`;
+        divsStats[0].innerHTML = `TOTAL DE RESPOSTAS:<br>${total/10}`;
+        divsStats[1].innerHTML = `JEDI:<br>${jedi/10} <br>(${total ? ((jedi / total) * 100).toFixed(0) : 0}%)`;
+        divsStats[2].innerHTML = `JEDI CINZA:<br>${jediCinza/10} <br>(${total ? ((jediCinza / total) * 100).toFixed(0) : 0}%)`;
+        divsStats[3].innerHTML = `SITH:<br>${sith/10} <br>(${total ? ((sith / total) * 100).toFixed(0) : 0}%)`;
       }
 
    
