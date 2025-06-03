@@ -1,7 +1,7 @@
-const conexao = require("../database/conexao");
+var conexao = require("../database/conexao");
 
 async function obterEstatisticas() {
-    const [results] = await conexao.query(`
+    var [results] = await conexao.query(`
         SELECT 
             IFNULL(SUM(qtdSith), 0) AS totalSith,
             IFNULL(SUM(qtdJedi), 0) AS totalJedi,
@@ -13,13 +13,9 @@ async function obterEstatisticas() {
 }
 
 async function salvarRespostas(idUsuario, idQuiz, qtdJedi, qtdJediCinza, qtdSith) {
-    const [resultado] = await conexao.query(`
+    var [resultado] = await conexao.query(`
         INSERT INTO UsuarioQuiz (idUsuario, idQuiz, qtdJedi, qtdJediCinza, qtdSith)
         VALUES (?, ?, ?, ?, ?)
-        ON DUPLICATE KEY UPDATE
-            qtdJedi = VALUES(qtdJedi),
-            qtdJediCinza = VALUES(qtdJediCinza),
-            qtdSith = VALUES(qtdSith)
     `, [idUsuario, idQuiz, qtdJedi, qtdJediCinza, qtdSith]);
 
     return resultado;

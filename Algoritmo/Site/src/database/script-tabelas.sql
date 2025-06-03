@@ -14,12 +14,12 @@ CREATE TABLE Quiz (
     descricao VARCHAR(200)
 );
 CREATE TABLE UsuarioQuiz (
+    idUsuarioQuiz INT PRIMARY KEY AUTO_INCREMENT,
     idUsuario INT,
     idQuiz INT,
     qtdSith INT DEFAULT 0,
     qtdJedi INT DEFAULT 0,
     qtdJediCinza INT DEFAULT 0,
-    PRIMARY KEY (idUsuario, idQuiz),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
     FOREIGN KEY (idQuiz) REFERENCES Quiz(idQuiz)
 );
