@@ -215,9 +215,9 @@
       if (response.ok) {
         console.log("Respostas enviadas com sucesso.");
         alert("Quiz enviado! Redirecionando para a dashboard...");
-        setTimeout(() => {
-          window.location.href = "dashboard.html";
-        }, 1500);
+        window.location.href = "dashboard.html";
+          return false;
+        ;
       } else {
         console.error("Erro ao enviar respostas.");
         response.text().then(texto => {
