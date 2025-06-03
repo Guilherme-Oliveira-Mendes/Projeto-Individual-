@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz - De que lado da Força você está?</title>
+    <link rel="shortcut icon" href="imagens/Logo/logo.webp" type="image/x-icon">
+</head>
+<body style="
+  font-family: Arial, sans-serif;
+  background: url('Imagens/fundo_index.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+">
+<main style="flex: 1;">
+    <nav style="display: flex; justify-content: space-between; align-items: center; background-color: black; border: 1px solid yellow; padding: 10px 20px;">
+        <img src="Imagens/Logo/logo.webp" style="height: 60px;">
+        <div style="display: flex; gap: 40px;">
+            <a href="index.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: 'News Gothic', 'ITC Serif Gothic';">HOME</a>
+            <a href="curiosidadades.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: 'News Gothic', 'ITC Serif Gothic';">SAIBA MAIS</a>
+            <a href="cadastro.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: 'News Gothic', 'ITC Serif Gothic';">CADASTRO</a>
+            <a href="login.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: 'News Gothic', 'ITC Serif Gothic';">LOGIN</a>
+ <a href="dashboard.html" style="color: yellow; text-decoration: none; font-size: 20px; font-family: 'News Gothic', 'ITC Serif Gothic';">DASHBOARD</a>
+        </div>
+    </nav>
+
+    <div id="quiz" style="background: rgba(255, 255, 255, 0.95); width: 400px; padding: 30px 40px; margin: 80px auto; border-radius: 8px; box-shadow: 0px 0px 15px rgba(0,0,0,0.3); color: black;">
+        <h1 style="text-align: center;">De que lado da Força você está?</h1>
+        <div id="pergunta" style="margin-top: 20px;"></div>
+        <select id="resposta" style="width: 100%; padding: 10px; margin-top: 20px; font-size: 16px;">
+            <option value="">Escolha uma resposta</option>
+        </select>
+        <button onclick="proximaPergunta()" style="background-color: black; color: white; border: 2px solid #fce376; padding: 10px 30px; border-radius: 30px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 30px; display: block; width: 100%;">Próxima</button>
+        <div id="resultado" style="margin-top: 30px; text-align: center; font-weight: bold; font-size: 18px;"></div>
+        
+    </div>
+    </main>
+     <footer>
+  <div style="
+
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: yellow;
+    font-size: 24px;
+  ">
+   
+    <img src="Imagens/sabre_de_luz.png" alt="Sabre de Luz" style="height: 60px; margin-right: 20px;">
+
+    
+    <div style="text-align: center;">
+      Desenvolvido por Guilherme Mendes<br>
+      Que a Força esteja com você
+    </div>
+
+   
+    <img src="Imagens/sabre_de_luz.png" alt="Sabre de Luz" style="height: 60px; margin-left: 20px;">
+  </div>
+</footer>
+</body>
+</html>
+    <script>
+        var perguntas = [
+            {
+                texto: "1. Quando alguém te trai, o que você sente primeiro?",
+                opcoes: [
+                    { texto: "a) Tristeza e decepção", valor: "a" },
+                    { texto: "b) Raiva e desejo de vingança", valor: "b" }
+                ]
+            },
+            {
+                texto: "2. Qual dessas palavras te representa mais?",
+                opcoes: [
+                    { texto: "a) Disciplina", valor: "a" },
+                    { texto: "b) Ambição", valor: "b" }
+                ]
+            },
+            {
+                texto: "3. Se você tivesse um grande poder, o que faria com ele?",
+                opcoes: [
+                    { texto: "a) Ajudaria os outros", valor: "a" },
+                    { texto: "b) Alcançaria meus objetivos", valor: "b" }
+                ]
+            },
+            {
+                texto: "4. Como você lida com suas emoções?",
+                opcoes: [
+                    { texto: "a) Busco equilíbrio", valor: "a" },
+                    { texto: "b) Sigo minhas paixões", valor: "b" }
+                ]
+            },
+            {
+                texto: "5. O que é mais importante?",
+                opcoes: [
+                    { texto: "a) Paz", valor: "a" },
+                    { texto: "b) Liberdade", valor: "b" }
+                ]
+            },
+            {
+                texto: "6. Regras existem para:",
+                opcoes: [
+                    { texto: "a) Manter a ordem", valor: "a" },
+                    { texto: "b) Serem quebradas quando preciso", valor: "b" }
+                ]
+            },
+            {
+                texto: "7. Em um conflito, você costuma:",
+                opcoes: [
+                    { texto: "a) Mediar com diálogo", valor: "a" },
+                    { texto: "b) Enfrentar diretamente", valor: "b" }
+                ]
+            },
+            {
+                texto: "8. Se alguém que você ama for ferido, você:",
+                opcoes: [
+                    { texto: "a) Tentaria perdoar", valor: "a" },
+                    { texto: "b) Buscaria vingança", valor: "b" }
+                ]
+            },
+            {
+                texto: "9. Qual dessas frases mais combina com você?",
+                opcoes: [
+                    { texto: "a) “A ignorância é a causa do sofrimento.”", valor: "a" },
+                    { texto: "b) “Através da paixão, eu ganho força.”", valor: "b" }
+                ]
+            },
+            {
+                texto: "10. Você prefere:",
+                opcoes: [
+                    { texto: "a) Ser parte de algo maior", valor: "a" },
+                    { texto: "b) Ser independente e no controle", valor: "b" }
+                ]
+            }
+        ];
+
+        var i = 0;
+        var respostas = [];
+
+        function mostrarPergunta() {
+            var pergunta = perguntas[i];
+            document.getElementById("pergunta").innerText = pergunta.texto;
+
+            var select = document.getElementById("resposta");
+            select.innerHTML = '<option value="">Escolha uma resposta</option>';
+            pergunta.opcoes.forEach(opcao => {
+                var opcoes = document.createElement("option");
+                opcoes.value = opcao.valor;
+                opcoes.innerText = opcao.texto;
+                select.appendChild(opcoes);
+            });
+        }
+
+        function proximaPergunta() {
+            var respostaSelecionada = document.getElementById("resposta").value;
+            
+
+            respostas.push(respostaSelecionada);
+            i++;
+
+            if (i < perguntas.length) {
+                mostrarPergunta();
+            } else {
+                mostrarResultado();
+            }
+        }
+
+        function mostrarResultado() {
+            var luz = respostas.filter(r => r === "a").length;
+            var sombra = respostas.filter(r => r === "b").length;
+
+            var resultado = "";
+
+            if (luz > sombra) {
+                resultado = "Você está no Lado da Luz. Que a Força esteja com você, Jedi!";
+            } else if (sombra > luz) {
+                resultado = "Você pertence ao Lado Sombrio da Força. Poder e paixão são o seu caminho!";
+            } else {
+                resultado = "Você está no caminho do Equilíbrio, como um Jedi Cinza.";
+            }
+
+            document.getElementById("quiz").innerHTML = `
+                <h2 style="text-align: center;">Resultado:</h2>
+                <p style="text-align: center;">${resultado}</p>
+            `;
+        }
+
+        
+        mostrarPergunta();
+    </script>
+

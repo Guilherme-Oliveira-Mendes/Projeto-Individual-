@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURIOSIDADES</title>
+    <link rel="shortcut icon" href="Imagens/Logo/logo.webp" type="image/x-icon">
+<link rel="stylesheet" href="Css/index.css" />
+</head>
+<body style="
+  font-family: Arial, sans-serif;
+  background: url('Imagens/fundo_curiojpg.webp') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+">
+
+
+  <main style="flex: 1;">
+    
+    <nav style="display: flex; justify-content: space-between; align-items: center; background-color: black; border: 1px solid yellow; padding: 10px 20px;">
+      <img src="Imagens/Logo/logo.webp" style="height: 60px;">
+      <div style="display: flex; gap: 40px;">
+        <a href="index.html" style="color: yellow; text-decoration: none; font-size: 20px;">HOME</a>
+        <a href="curiosidadades.html" style="color: yellow; text-decoration: none; font-size: 20px;">SAIBA MAIS</a>
+        <a href="cadastro.html" style="color: yellow; text-decoration: none; font-size: 20px;">CADASTRO</a>
+        <a href="login.html" style="color: yellow; text-decoration: none; font-size: 20px;">LOGIN</a>
+      </div>
+    </nav>
+
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+      <div id="div_filmes">
+        <button style="background-color: black; color: white; border: 2px solid #fce376; padding: 10px 30px; border-radius: 30px; font-weight: bold; font-size: 14px; cursor: pointer; height: 70px; width: 250px;" onclick="Filmes()">FILMES</button>
+      </div>
+      <div id="div_forca">
+        <button style="background-color: black; color: white; border: 2px solid #fce376; padding: 10px 30px; border-radius: 30px; font-weight: bold; font-size: 14px; cursor: pointer; height: 70px; width: 250px;" onclick="Forca()">FORÇA</button>
+      </div>
+      <div id="div_armas">
+        <button style="background-color: black; color: white; border: 2px solid #fce376; padding: 10px 30px; border-radius: 30px; font-weight: bold; font-size: 14px; cursor: pointer; height: 70px; width: 250px;" onclick="Armas()">ARMAS</button>
+      </div>
+      <div id="div_vs">
+        <button style="background-color: black; color: white; border: 2px solid #fce376; padding: 10px 30px; border-radius: 30px; font-weight: bold; font-size: 14px; cursor: pointer; height: 70px; width: 250px;" onclick="Vs()">ALIANÇA REBELDE X IMPÉRIO</button>
+      </div>
+    </div>
+
+    <div id="div_mensagem" style="color: yellow; text-align: center; margin-top: 20px;"></div>
+  
+  </main>
+
+
+  <footer style="
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: yellow;
+    font-size: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+  ">
+    <img src="Imagens/sabre_de_luz.png" alt="Sabre de Luz" style="height: 50px; margin: 10px 20px;">
+    <div>
+      <strong>Desenvolvido por Guilherme Mendes</strong><br>
+      Que a Força esteja com você
+    </div>
+    <img src="Imagens/sabre_de_luz.png" alt="Sabre de Luz" style="height: 50px; margin: 10px 20px;">
+  </footer>
+
+</body>
+</html>
+<script>
+  
+function Filmes(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+
+div_filmes.innerHTML = `<button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="I()">Triologia I</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="II()">Triologia II</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="III()">Triologia III</button><br>
+                        `
+
+}
+function I(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'A Trilogia I.<br><br>Tudo começa com a descoberta de um garoto com um poder extraordinário da Força — Anakin Skywalker, um escravo em Tatooine que é libertado por Qui-Gon Jinn, um Jedi rebelde que vê nele o Escolhido profetizado para trazer equilíbrio à Força. Mas a paz da galáxia já está se desintegrando.<br><br> Em A Ameaça Fantasma (Episódio I), a Federação do Comércio ameaça Naboo, e os Jedi percebem que algo mais sombrio está em jogo: os Sith — inimigos ancestrais — estão de volta, liderados pelo misterioso Darth Sidious. A morte de Qui-Gon nas mãos do temível Darth Maul deixa uma marca profunda, e seu aprendiz, Obi-Wan Kenobi, jura treinar Anakin.<br><br> Em Ataque dos Clones (Episódio II), a galáxia mergulha em conflito. Anakin, agora um jovem Jedi impulsivo e poderoso, começa a se apaixonar por Padmé Amidala, mesmo que o amor seja proibido pela Ordem Jedi. Ao mesmo tempo, uma conspiração se desenrola: um exército de clones é secretamente criado, os Jedi são manipulados, e a guerra começa. Conde Dookan, ex-Jedi e novo líder separatista, executa os planos de Sidious, preparando o caminho para o Império. <br><br>Finalmente, em A Vingança dos Sith (Episódio III), o destino se cumpre. Anakin é consumido pelo medo de perder Padmé e pelas manipulações do Chanceler Palpatine, que revela sua verdadeira identidade como Darth Sidious. Em busca de poder para salvar quem ama, Anakin trai os Jedi e se transforma em Darth Vader. O massacre da Ordem Jedi e a queda da República marcam o nascimento do Império Galáctico. Padmé morre com o coração partido, e seus filhos, Luke e Leia, são separados e escondidos, mantendo viva uma esperança futura.<br><br><img src="imagens/Triologia_I.png" >'
+}
+
+function II(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'A Trilogia II.<br><br>Depois da queda da República e da ascensão do cruel Império Galáctico, a galáxia vive sob a opressão do lado sombrio. A liberdade foi esmagada, os Jedi foram quase extintos, e o Imperador comanda através do medo, com seu aprendiz — o temido Darth Vader — como punho de ferro. Mas a chama da rebelião ainda arde. <br><br>Em Uma Nova Esperança (Episódio IV), surge um novo herói: Luke Skywalker, um jovem fazendeiro de Tatooine, que descobre um chamado maior ao encontrar uma mensagem da princesa Leia Organa escondida no pequeno droide R2-D2. Ao lado do velho mestre Jedi Obi-Wan Kenobi, do carismático mercenário Han Solo, do wookiee Chewbacca e do droide C-3PO, Luke se junta à Aliança Rebelde para enfrentar o poder destrutivo da Estrela da Morte. Com a Força ao seu lado, ele destrói a estação, dando nova esperança à galáxia.<br><br> Em O Império Contra-Ataca (Episódio V), a Rebelião sofre um duro golpe. O Império persegue os rebeldes até os confins da galáxia, e Luke treina com o sábio Mestre Yoda em Dagobah para se tornar um Jedi. Mas a verdade é mais sombria do que ele imagina. <br><br>Em um duelo épico com Darth Vader, Luke descobre um segredo devastador: Vader é seu pai. A esperança vacila, mas não morre.<br><br> Finalmente, em O Retorno de Jedi (Episódio VI), Luke está pronto para enfrentar seu destino. Com a construção de uma nova Estrela da Morte e os rebeldes preparando um ataque final, tudo caminha para o confronto decisivo. Luke encara Vader e tenta trazê-lo de volta à luz. No momento final, há redenção: Anakin Skywalker retorna, derrota o Imperador e sacrifica-se para salvar o filho — e a galáxia. A Estrela da Morte é destruída, o Império cai, e a esperança vence as trevas.<br><br><img src="imagens/Triologia_II.png" >'
+}
+
+function III(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'A Trilogia III.<br><br>Anos após a queda do Império, a galáxia ainda não encontrou paz. Das cinzas do antigo regime, ergue-se uma nova ameaça: a Primeira Ordem, uma organização implacável liderada por Supremo Líder Snoke e seu misterioso aprendiz sombrio, Kylo Ren — herdeiro do sangue Skywalker, dividido entre a luz e a escuridão. <br><br>Mas a Força desperta novamente. Em O Despertar da Força (Episódio VII), conhecemos Rey, uma catadora de sucata em Jakku que descobre dentro de si um poder adormecido. Ao lado do desertor stormtrooper Finn, do piloto da Resistência Poe Dameron, e do lendário Han Solo, ela se junta à luta contra a Primeira Ordem. Ao encontrar o sabre de luz de Anakin, ela é puxada para o destino que sempre lhe pertenceu. Mas a dor também retorna: Han confronta seu filho, Kylo Ren (Ben Solo), e paga com a vida.<br><br> Em Os Últimos Jedi (Episódio VIII), Rey busca Luke Skywalker, exilado e desencantado com os Jedi. Ele teme o ciclo de falhas da Ordem, mas Rey insiste: a galáxia precisa de esperança. Enquanto a Resistência é caçada até a beira da extinção, Rey confronta a conexão com Kylo — um laço estranho que revela uma dualidade: dois lados da mesma balança. Luke, em um último ato heroico, projeta-se pela Força para salvar os rebeldes, e se une à Força como lenda viva. E então vem o fim.<br><br> Em A Ascensão Skywalker (Episódio IX), o passado volta com fúria: o Imperador Palpatine, outrora destruído, retorna das profundezas do desconhecido, manipulando tudo desde as sombras. Rey enfrenta a verdade sobre sua origem — ela é neta de Palpatine — mas escolhe seu próprio caminho. Com a ajuda dos espíritos Jedi e do retorno de Ben Solo à luz, ela enfrenta o Imperador em Exegol, destruindo de vez o legado Sith. No final, Rey adota o nome Skywalker, encerrando o ciclo e dando novo significado à linhagem: não de sangue, mas de escolha.<br><br><img src="imagens/Triologia_III.png" >'
+}
+
+function Forca(){
+div_filmes.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+
+
+div_forca.innerHTML = `<button  style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Yoda()" >Segundo Mestre Yoda</button><br>
+                        <button  style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Qui_Gon()">Segundo Mestre Qui-Gon Jinn</button><br>`
+}
+
+
+function Yoda(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'Segundo Meste Yoda<br><br><br>Para o mestre Yoda, a Força em Star Wars é um campo de energia vital, criado por todos os seres vivos, que une a galáxia e dá poder aos Jedi. É uma força que os Jedis usam para a sabedoria, defesa e para realizar feitos extraordinários, sempre buscando o equilíbrio e a paz.<br><br>A Força não é apenas uma energia, mas uma conexão que permeia todos os seres vivos, tornando-os parte de um todo. É através da Força que os Jedi conseguem manipular objetos, antever o futuro, proteger-se e até mesmo curar. A Força tem dois lados, a Luz e a Escuridão, e os Jedi buscam o equilíbrio entre eles, evitando se deixar levar pelas emoções negativas que corrompem a Força. Para os Jedi, a Força não deve ser usada para o ataque, mas para a sabedoria, defesa e para a proteção da galáxia.<br><br>Conceito de morte e renascimento:Yoda ensina que a morte é uma parte natural da vida, e que aqueles que se unem à Força se transformam, continuando a existir em outra forma.<br><br><img src="imagens/metre_yoda.jpg" style="height: 300px;"  >'
+}
+
+function Qui_Gon(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'Segundo Meste Qui-Gon-Jinn<br><br><br>Para o mestre Qui-Gon, a Força é uma energia viva e onipresente que interliga todos os seres da galáxia. É uma força que pode ser usada para o bem ou para o mal, dependendo da vontade de quem a utiliza. Qui-Gon acreditava na importância de estar presente no momento e de usar a Força de forma consciente e intuitiva.<br><br>Para Qui-Gon, a Força não é apenas um poder, mas uma energia que flui entre todos os seres e coisas. É uma força que pode ser sentida e usada para curar, proteger, e também para destruição, conhecidos como Midichlorians. Qui-Gon acreditava que a Força era um guia para os Jedi, mas também um desafio para eles. Ele enfatizava a importância de usar a Força com sabedoria e responsabilidade, evitando o lado sombrio que poderia corromper os indivíduos e a ordem Jedi.<br><br>Conceito de morte e renascimento: Um dos conceitos centrais da filosofia de Qui-Gon é a Força Viva. Ele acreditava que, ao se concentrar no momento presente e seguir a vontade da Força, os Jedi poderiam alcançar um nível de conhecimento e poder que era inacessível àqueles que se preocupavam demais com o futuro ou com o passado. Qui-Gon foi um dos primeiros a demonstrar a capacidade de permanecer conectado à Força após a morte, tornando-se um fantasma da Força. Essa habilidade permitiu que ele transmitisse seus ensinamentos a Yoda e Obi-Wan, e que eles, por sua vez, os passassem a Luke Skywalker.<br><br><img src="imagens/Qui-Gon Jinn.png"style="height: 300px;"  >'
+}
+
+
+function Armas(){
+    div_filmes.innerHTML = ``
+div_forca.innerHTML = ``
+div_vs.innerHTML = ``
+
+     div_armas.innerHTML = `<button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Blater()">Blaters</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Cristais()">Cristais Kybers</button><br>`
+}
+
+function Blater(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'Blaters<br><br><br>Não são lasers, são plasma!<br>Ao contrário do que muitos pensam, os blasters não disparam lasers (luz pura), mas sim raios de plasma superaquecado.Esse plasma é contido em um campo energético que o mantém coeso por um curto tempo, como um “projétil” visível — por isso você vê os tiros no ar.<br><br>O que alimenta um blaster?<br><br>Blasters usam dois componentes principais:Célula de energia (power pack): Fornece a energia elétrica necessária para ionizar o gás.Cartucho de gás blaster (blaster gas cartridge): Contém um gás especial (como Tibanna, extraído de Bespin) que é ionizado e transformado em plasma quente.A arma converte esse gás em um raio de energia compactado que é lançado como munição. Quando atinge algo, causa dano térmico e impacto, como uma mistura de tiro de arma de fogo com queimadura.<br><br>Variedade de blasters<br><br>Os blasters variam muito:<br> Blaster pistolas<br>Blaster rifles<br>Heavy blasters<br>Cada um pode ter ajustes de potência, cadência de tiro, e até modos de atordoamento.<br><img src="imagens/blaters.png" >'
+}
+
+
+function Cristais(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'Cristais Kybers<br><br><br>Os Cristais Kyber são cristais raros e naturais, altamente sensíveis à Força. São encontrados em poucos planetas, como Ilum, Jedha e Lothal. Eles não são simples pedras: estão vivos na Força, e por isso podem escolher ou responder a quem os empunha.<br><br>Função principal: Sabres de luz. <br><br>Nos sabres de luz Jedi e Sith, o cristal Kyber é o coração da arma. Ele canaliza energia do sabre, estabiliza e amplifica essa energia, e projeta a lâmina de plasma visível como um feixe controlado.Sem o cristal Kyber, um sabre de luz simplesmente não funciona.Durante o ritual de construção do sabre, o cristal ressoa com o jovem padawan e muda de cor quando a conexão se forma. Por que os cristais têm cores diferentes?<br>Azul: Jedi guardiões — focam em combate e proteção.<br>Verde: Jedi consulares — focam na Força, sabedoria e diplomacia.<br>Amarelo: Jedi Sentinelas— equilíbrio entre luta e conhecimento.<br>Roxo: Raro — representa usuários que dominam ambos os lados.<br>Branco: Cristais pificados.<br>Vermelho: Usados por Sith. Cristais não vêm naturalmente vermelhos. Eles são corrompidos ou sangrados através do ódio e da dor.<br><img src="imagens/sabres.png" >'
+}
+
+    function Vs(){
+            div_filmes.innerHTML = ``
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+        div_vs.innerHTML = `<button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Rebelde()">Aliança Rebelde</button><br>
+                        <button style="background-color: black;color: white;border: 2px solid #fce376; padding: 10px 30px;border-radius: 30px;font-weight: bold;font-size: 14px;cursor: pointer; height: 70px;width: 250px;" onclick="Império()">Império</button><br>`
+    }
+    function Rebelde(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'A Aliança Rebelde<br><br><br> A Rebelião começou com vozes sussurrando liberdade nos cantos escuros da galáxia. Com senadores como Bail Organa e Mon Mothma, que viram a República morrer nas mãos do Império e decidiram resistir — mesmo que em segredo.Começou com espiões, traficantes, desertores... pessoas comuns, cansadas de ver planetas sendo destruídos, culturas sendo apagadas, e crianças crescendo com medo de stormtroopers.Sob um único símbolo, a Rebelião se tornou mais do que uma luta — tornou-se esperança organizada.Eles não tinham armas suficientes, suas naves eram remendadas, seus códigos mudavam a cada semana, mas mesmo assim... lutaram.<br><br><br>Heróis principais<br><br>Leia Organa: Princesa, senadora e guerreira. O coração da Rebelião.<br><br>Luke Skywalker: O fazendeiro que virou Jedi e símbolo de esperança.<br><br>Han Solo e Chewbacca: Contrabandistas que encontraram um propósito.<br><br>Vitórias:<br><br>Roubou os planos da Estrela da Morte.<br><br>Destruição da estação de Batalha(Estrela da Morte).<br><br>Sobreviveu à perseguição implacável do Império.<br><br>E finalmente, em Endor, derrotou o próprio Imperador, trazendo o fim do reinado de terror.<br><br><br>"Não tínhamos grandes exércitos. Não tínhamos naves colossais. Só tínhamos uns aos outros... e a coragem de dizer NÃO ao Império."<br><img src="imagens/logo_rebeldes.png"style="height: 300px;" >'
+}
+
+function Império(){
+div_forca.innerHTML = ``
+div_armas.innerHTML = ``
+div_vs.innerHTML = ``
+div_filmes.innerHTML = ``
+
+ div_mensagem.innerHTML = 'O Império<br><br><br>O Império começou com a ruina do República. Durante as Guerras Clônicas, a galáxia estava cansada de caos. O Chanceler Palpatine, querido por muitos, liderava com firmeza — mas nas sombras, era o Lorde Sith Darth Sidious. Ao manipular ambos os lados da guerra, ele criou o problema... e se tornou a solução. Com um decreto dramático, e sob pretexto de segurança, a República foi reorganizada em um Império Galáctico, e os Jedi — guardiões da paz por milênios — foram traídos e exterminados. A Ordem 66 marcou o fim de uma era... e o começo de um reinado de ferro.<br><br><br>Um Reinado do Medo<br><br>O Império era vasto eimplacável, planetas eram oprimidos, culturas apagadas ,a liberdade... virou crime.<br><br><br>Armas:<br><br>A Estrela da Morte: Uma estação de batalha com poder para destruir planetas inteiros.<br><br>Os Star Destroyers: Gigantescas naves que dominavam os céus e impunham o poder imperial.<br><br>O Inquisitorius: Caçadores de sobreviventes Jedi, para garantir que a luz nunca voltasse.<br><br>Queda:<br><br>Com a vitória em Endor e a queda de Palpatine, o Império começou a ruir. Mas ele não desapareceu completamente. Fragmentos sobreviventes, escondidos nas Regiões Desconhecidas, dariam origem à Primeira Ordem anos depois...O Império caiu, sim. Mas a ideia do Império... essa ainda ecoa nas estrelas.<br><br><br>"Eles prometeram paz. Segurança. Ordem. Mas deram medo. Silêncio. Controle. O Império não nasceu em um golpe... ele nasceu com aplausos."<br><img src="imagens/logo_imperio.png"style="height: 300px;" >'
+}
+</script>
+
