@@ -30,19 +30,19 @@
 <div style="display: flex; flex-direction: column; justify-content: center;align-items: center;">
 
   <h1>
-   <div style="margin-bottom: 20px; font-weight: bold;" id="boasVindas">OLÁ Mestre USUÁRIO </div>
+   <div style="margin-bottom: 20px; font-weight: bold;" id="boasVindas"></div>
 </h1>
     
-  
+ 
 
   <main style="flex: 1; padding: 20px;">
 
 
     <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
-      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">TOTAL DE RESPOSTAS:<br>24</div>
-      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">JEDI:<br>8 <br>(33%)</div>
-      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">JEDI CINZA:<br>6 <br>(25%)</div>
-      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">SITH:<br>10 <br>(41%)</div>
+      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">TOTAL DE RESPOSTAS:</div>
+      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">JEDI:</div>
+      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">JEDI CINZA:</div>
+      <div style="background-color: gold; padding: 10px; border-radius: 5px; color: black; font-weight: bold;">SITH:</div>
     </div>
 
     <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
@@ -143,23 +143,23 @@
   
   async function atualizarDashboard() {
     try {
-      const response = await fetch('/respostas/estatisticas');
+      var response = await fetch('/respostas/estatisticas');
       if (!response.ok) throw new Error('Erro ao obter dados da API');
 
-      const dados = await response.json();
+      var dados = await response.json();
 
-      const total = dados.totalRespostas || 0;
-      const jedi = dados.totalJedi || 0;
-      const jediCinza = dados.totalJediCinza || 0;
-      const sith = dados.totalSith || 0;
+      var total = dados.totalRespostas || 0;
+      var jedi = dados.totalJedi || 0;
+      var jediCinza = dados.totalJediCinza || 0;
+      var sith = dados.totalSith || 0;
 
      
-      const divsStats = document.querySelectorAll("div[style*='background-color: gold']");
-      if (divsStats.length >= 4) {
-        divsStats[0].innerHTML = `TOTAL DE RESPOSTAS:<br>${total/10}`;
-        divsStats[1].innerHTML = `JEDI:<br>${jedi/10} <br>(${total ? ((jedi / total) * 100).toFixed(0) : 0}%)`;
-        divsStats[2].innerHTML = `JEDI CINZA:<br>${jediCinza/10} <br>(${total ? ((jediCinza / total) * 100).toFixed(0) : 0}%)`;
-        divsStats[3].innerHTML = `SITH:<br>${sith/10} <br>(${total ? ((sith / total) * 100).toFixed(0) : 0}%)`;
+      var Stats = document.querySelectorAll("div[style*='background-color: gold']");
+      if (Stats.length >= 4) {
+        Stats[0].innerHTML = `TOTAL DE RESPOSTAS:<br>${total/10}`;
+        Stats[1].innerHTML = `JEDI:<br>${jedi/10} <br>(${total ? ((jedi / total) * 100).toFixed(0) : 0}%)`;
+        Stats[2].innerHTML = `JEDI CINZA:<br>${jediCinza/10} <br>(${total ? ((jediCinza / total) * 100).toFixed(0) : 0}%)`;
+        Stats[3].innerHTML = `SITH:<br>${sith/10} <br>(${total ? ((sith / total) * 100).toFixed(0) : 0}%)`;
       }
 
    
@@ -179,8 +179,8 @@
     alert("Você precisa estar logado para acessar a dashboard.");
     window.location.href = "login.html";
   } else {
-    var divBoasVindas = document.getElementById("boasVindas");
-    divBoasVindas.innerHTML = `OLÁ <br>Mestre ${nomeUsuario.toUpperCase()}`;
+
+    boasVindas.innerHTML = `OLÁ MESTRE ${nomeUsuario.toUpperCase()}`;
   }
 
  
