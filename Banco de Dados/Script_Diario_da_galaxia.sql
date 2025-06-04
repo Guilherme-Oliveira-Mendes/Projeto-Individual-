@@ -27,7 +27,10 @@ CREATE TABLE UsuarioQuiz (
 INSERT INTO Quiz (descricao) VALUES ('Quiz - De que lado da Força você está?');
 
 SHOW TABLES;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 14b8350182eaed2afd5157a17e9b0caf68af67cd
 select * from Usuario;
 select * from Quiz;
 select * from UsuarioQuiz;
