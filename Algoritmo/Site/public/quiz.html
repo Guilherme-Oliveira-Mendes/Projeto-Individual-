@@ -134,7 +134,7 @@
 
         function mostrarPergunta() {
             var pergunta = perguntas[i];
-            document.getElementById("pergunta").innerText = pergunta.texto;
+            pergunta.innerText = pergunta.texto;
 
             var select = document.getElementById("resposta");
             select.innerHTML = '<option value="">Escolha uma resposta</option>';
@@ -147,7 +147,7 @@
         }
 
         function proximaPergunta() {
-            var respostaSelecionada = document.getElementById("resposta").value;
+            var respostaSelecionada = resposta.value;
             
 
             respostas.push(respostaSelecionada);
